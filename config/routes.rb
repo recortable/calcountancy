@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => 'user_accounts_controller', :action => 'index'
+  map.root :controller => 'user_accounts', :action => 'index'
 
   map.resource(:user_sessions, :as => 'sesion', :member => {:close => :get})
 

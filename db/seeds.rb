@@ -18,15 +18,16 @@ class Seeder
       create_account account[1]
     end
 
-    calc = @accounts[0]
-    calc.users << @users
-    calc.save!
-    calc_iva = @accounts[1]
-    calc_iva.users << @users
-    calc_iva.save!
-    dani = @accounts[2]
-    dani.users << @users[0]
-    dani.save!
+    add_users(Account.find_by_name('calc'), @users)
+    add_users(Account.find_by_name('calc-iva'), @users)
+    add_users(Account.find_by_name('personal'), [User.find_by_name('Dani')])
+  end
+
+  def add_users(account, users)
+    users.each do |user|
+      account.users << user
+    end
+    account.save
   end
 
   def create_account(account)
