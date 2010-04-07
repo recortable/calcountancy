@@ -1,0 +1,86 @@
+
+es:
+  disable_with: "Un momento por favor..."
+  
+    
+  layouts:
+    navigation:
+      login: "Entrar"
+
+
+  documents:
+    browser:
+      title: "Archivos"
+      new_document: "Crear un nuevo archivo"
+    slot:
+      new_clip_text: "Añadir texto"
+      new_clip_auto: "Añadir un enlace externo"
+    document:
+      edit: "Editar documento"
+    show:
+      place: "{{title}}"
+      loaded: "Archivo '{{title}}' listo."
+    form:
+      new: "Añadir al archivo de '{{title}}'"
+      update: "Editar '{{title}}'"
+
+  disqs:
+    browser:
+      title: "Discusiones"
+      new_disq: "Añadir una nueva discusión"
+    answer:
+      edit: "Modificar"
+      answer: "Añadir respuesta"
+      no_answers: "Sin responder."
+      answers: "Respuestas:"
+    show:
+      place: "Discusión: {{title}}"
+    types:
+      proposal: Propuesta
+      consensus: Consenso
+      question: Pregunta
+
+  projects:
+    index:
+      title: "Entrada"
+      place: "Plataforma Booka"
+      loaded: "Pulsa sobre las investigaciones para empezar."
+
+  indexes:
+    index:
+      title: "Índice de {{title}}"
+    browser:
+      title: "Índice"
+
+  project_calls:
+    show:
+      title: "Convocatoria"
+      place: "{{title}}"
+      loaded: "Convocatoria cargada."
+
+  project_documents:
+    index:
+      place: "Archivos de '{{title}}'"
+      loaded: "Haz click sobre cualquier archivo para verlo."
+      
+  project_disqs:
+    index:
+      place: "Discusiones sobre '{{title}}'"
+      loaded: "Pulsa sobre alguna discusión para leerla."
+
+
+  project_indexes:
+    show:
+      place: "Explorando: {{title}}"
+
+  clips:
+    clip:
+      edit: "Editar"
+
+  indices:
+    browser:
+      title: "Índice general"
+
+  workspace:
+    entrance:
+      welcome: "Bienvenidx"
