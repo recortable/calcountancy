@@ -1,6 +1,7 @@
 log/*
 tmp/*
 private
+db/data.yml
 config/database.yml
 config/git.yml
 nbproject
