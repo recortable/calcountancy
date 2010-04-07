@@ -2,7 +2,7 @@ class UserSessionsController < ApplicationController
   inherit_resources
   respond_to :html, :xml, :json, :js
   actions :new, :create, :destroy
-  layout 'session'
+  layout 'sessions'
 
   def create
     create! do |success, failure|
