@@ -3,6 +3,5 @@ module ApplicationHelper
 
   def title(title)
     content_for(:title) {title}
-    "<h1>#{title}</h1>"
   end
 end

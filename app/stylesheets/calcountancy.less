@@ -1,0 +1,44 @@
+
+@import "reset-min.css";
+@import "variables";
+
+html {
+    font-size: 90%;
+    font-family: @serif;
+    background-color: @grisclaro;
+}
+
+html, body {height: 100%; width: 100%;}
+a {color: black; text-decoration: none;}
+a:hover {text-decoration: underline;}
+
+h1, h2, h3, h4 {font-family: @sans;}
+
+#user {text-align: right; width: 960px; margin: 30px auto 3px auto; }
+#legal {margin: 3px 0; font-size: 80%; letter-spacing: 0.2em; text-align: center; font-family: @sans; color: @grisoscuro;}
+#legal a {letter-spacing: 0.5em; color: @grisoscuro;}
+#page {
+    padding: 20px;
+    width: 960px; margin: 0px auto;
+    background-color: white;
+    border: 1px solid @gris;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+#sitebar { float: left; width: 160px; }
+#sitebar ul {border-bottom: 1px solid @gris;}
+#sitebar li {font-family: @sans; border-top: 1px solid @gris;}
+#sitebar li.top {font-size: 130%; }
+#sitebar li a {display: block; padding: 5px 15px; }
+#sitebar li.top a {padding: 5px 5px;}
+#sitebar li a:hover {text-decoration: none; background-color: @grisclaro;}
+
+#content {margin-left: 180px;}
+#page > h1 {font-size: 200%; margin-bottom: 1em; margin-left: 180px;}
+
+.account {margin: 0px 0 20px 0;}
+.account h1 {font-size: 150%; }
+.account p {margin: 5px 0px;}
+.account p label {padding-right: 5px;}
+.account .users {width: 100%; overflow: hidden; }
+.account .users span { float: left;  background-color: @gris; .button;}

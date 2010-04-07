@@ -17,8 +17,27 @@
     <% end %>
   </head>
   <body>
+      <div id="user">
+        <%= link_to current_user.login %>
+      </div>
     <div id="page">
-      <%= yield %>
+      <h1><%= yield :title %></h1>
+      <div class="container">
+        <div id="sitebar">
+          <ul>
+            <li class="top"><%= link_to t('.accounts'), user_accounts_path %></li>
+            <% current_user.accounts.each do |account| %>
+            <li><%= link_to account.name, user_account_path(account) %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div id="content">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <div id="legal">
+      calcountancy &#9733 handmade software by <%= link_to 'calc', 'http://calclab.com', :class => 'calc' %>
     </div>
   </body>
 </html>

@@ -1,4 +1,12 @@
 
 <% div_for account do %>
-  <h1><%= link_to account.name %></h1>
+  <h1><%= link_to account.name, user_account_path(account) %></h1>
+  <div class="users">
+    <% account.users.each do |user| %><%= content_tag :span, user.name %><% end %>
+  </div>
+  <p><label><%= t('.number') %>:</label><%= account.number %></p>
+  <p><label><%= t('.owner') %>:</label><%= account.owner %></p>
+  <p><label><%= t('.owner_address') %>:</label><%= account.owner_address %></p>
+  <p><label><%= t('.bic') %>:</label><%= account.bic %></p>
+  <p><label><%= t('.iban') %>:</label><%= account.iban %></p>
 <% end %>
