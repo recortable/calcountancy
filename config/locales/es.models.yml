@@ -1,0 +1,30 @@
+
+es:
+  activerecord:
+    models:
+      account: "cuenta"
+      tag: "tag"
+      movement: "movimiento"
+    attributes:
+      account:
+        number: "Número de cuenta"
+        entity_code: "Número de entidad"
+        office_code: "Número de oficina"
+        control_code: "Número de control"
+        name: "Nombre de la cuenta"
+        address: "Dirección"
+        owner: "Titular"
+        owner_address: "Dirección del titular"
+        bic: "BIC"
+        iban: "IBAN"
+      tag:
+        name: "Nombre"
+        color: "Color"
+      movement:
+        tags: "Etiquetas"
+
+  formtastic:
+    actions:
+      create: "Crear {{model}}"
+      update: "Guardar {{model}}"
+      dummie: "Launch!"

@@ -1,0 +1,11 @@
+
+<% semantic_form_for([:user, @account, @tag]) do |form| %>
+  <%= form.error_messages %>
+  <% form.inputs do %>
+    <%= form.input :name %>
+    <%= form.input :color %>
+  <% end %>
+  <% form.buttons do %>
+    <%= form.commit_button %>
+  <% end %>
+<% end %>

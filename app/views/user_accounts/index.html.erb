@@ -1,4 +1,5 @@
-
-<% title t('.title') %>
+<% content_for :top do  %>
+  <%= title t('.title') %>
+<% end %>
 
 <%= render @accounts %>

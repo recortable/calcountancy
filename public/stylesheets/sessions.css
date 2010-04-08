@@ -76,6 +76,7 @@ html {
   font-family: Georgia, Cambria, Times, serif;
 }
 .dialog {
+  background-color: white;
   position: relative;
   width: 400px;
   margin: 200px auto 0 auto;

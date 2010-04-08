@@ -1,0 +1,8 @@
+
+<% content_for :top do  %>
+  <%= title t('.title') %>
+<% end %>
+
+<% @accounts.each do |account| %>
+  <%= render :partial => '/user_account_tags/account', :object => account %>
+<% end %>

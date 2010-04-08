@@ -1,0 +1,10 @@
+
+<% semantic_form_for(@movement) do |form| %>
+  <%= form.error_messages %>
+  <% form.inputs do %>
+    <%= form.input :tags, :as => :check_boxes  %>
+  <% end %>
+  <% form.buttons do %>
+    <%= form.commit_button %>
+  <% end %>
+<% end %>

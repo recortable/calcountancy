@@ -2,12 +2,27 @@
 es:
   app:
     disable_with: "Un momento por favor..."
-  
+    account_name: "Nombre de la cuenta"
+    account_number: "Número de cuenta"
+    begin_date: "Fecha inicial"
+    end_date: "Fecha final"
+    initial_balance: "Saldo inicial"
+    end_balance: "Saldo final"
+
+  import:
+    records_to_import: "Número de movimientos a importar"
+    state:
+      import: "Válido"
+      duplicate: "Duplicado"
+    errors:
+      different_accounts: "Los datos de importación son de una cuenta distinta a la cuenta seleccionada"
+      no_header: "Falta la cabecera. ¿Seguro que has hecho bien el corta y pega?"
     
   layouts:
     calcountancy:
       title: "Calcountancy"
       accounts: "Mis cuentas"
+      tags: "Mis etiquetas"
 
   accounts:
     account:
@@ -17,6 +32,45 @@ es:
       iban: "IBAN"
       bic: "BIC"
 
+  movements:
+    movement:
+      manage_tags: "Añadir o quitar etiquetas"
+      add_comment: "Añadir comentario"
+    edit:
+      title: "Modificar movimiento de la cuenta '{{name}}'"
+
   user_accounts:
     index:
       title: "Mis cuentas"
+    show:
+      title: "Cuenta '{{name}}'"
+      import: "Importar de Arquia"
+      edit: "Modificar datos"
+      add_tag: "Añadir etiqueta"
+    edit:
+      title: "Modificar datos de la cuenta '{{name}}'"
+
+  user_tags:
+    index:
+      title: "Mis etiquetas"
+
+  user_account_imports:
+    new:
+      title: "Importar a la cuenta '{{name}}'"
+      preview: "Previsualizar"
+      import: "Importar"
+    create:
+      title: "Moviemientos importados con éxtio a la cuenta '{{name}}'"
+      success: "Se ha importado"
+      fail: "Error importando"
+      continue: "Continuar"
+
+  user_account_tags:
+    index:
+      title: "Etiquetas de la cuenta '{{name}}'"
+    account:
+      new: "Añadir etiqueta"
+    new:
+      title: "Añadir tag a la cuenta '{{name}}'"
+    show:
+      title: "Movimientos con etiqueta '{{tag}}' en la cuenta '{{name}}'"

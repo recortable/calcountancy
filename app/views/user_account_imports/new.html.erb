@@ -1,0 +1,58 @@
+<% content_for :top do %>
+  <%= title t('.title', :name => @account.name) %>
+<% end %>
+
+<div class="properties">
+  <p><label><%= t('app.account_number') %>:</label><%= @account.account_number %></p>
+</div>
+
+<% form_tag(preview_user_account_import_path(@account), :class => 'import') do %>
+  <%= text_area_tag :import, params[:import] %>
+  <%= submit_tag t('.preview') %>
+<% end %>
+
+<% if @import %>
+  <div class="properties">
+    <p><label><%= content_tag :label, t('app.account_name') %>:</label><%= @import.account_name %></p>
+    <p><label><%= t('app.account_number') %>:</label><%= @import.account_number %></p>
+    <p><label><%=  t('app.begin_date') %>:</label><%= @import.begin_date.fecha %></p>
+    <p><label><%=  t('app.end_date') %>:</label><%= @import.end_date.fecha %></p>
+    <p><label><%=  t('app.initial_balance') %>:</label><%= @import.initial_balance %></p>
+    <p><label><%=  t('app.end_balance') %>:</label><%= @import.end_balance %></p>
+    <p class="records_to_import"><label><%=  t('import.records_to_import') %>:</label><%= @import.records_to_import %></p>
+  </div>
+
+  <% if @import.errors? %>
+    <div class="import errors">
+      <% @import.errors.each do |error| %>
+        <p><%= error %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <% form_tag(user_account_import_path(@account)) do %>
+      <%= hidden_field_tag :import, params[:import] %>
+      <table>
+        <% @import.movements.each_with_index do |movement, index| %>
+          <tr class="<%= cycle('even', 'odd') %>">
+            <td class="import_state <%= movement.import %>">
+              <%= t("import.state.#{movement.import}") %>
+              <%= hidden_field_tag 'movement[][date]', movement.date, :id => "movement_date_#{index}" %>
+              <%= hidden_field_tag 'movement[][ammount]', movement.ammount, :id => "movement_ammount_#{index}" %>
+              <%= hidden_field_tag 'movement[][balance]', movement.balance, :id => "movement_balance_#{index}" %>
+              <%= hidden_field_tag 'movement[][concept]', movement.concept, :id => "movement_concept_#{index}" %>
+            </td>
+            <td><%= movement.fecha %></td>
+            <td><%= movement.ammount_es %></td>
+            <td><%= movement.balance_es %></td>
+            <td><%= movement.concept %></td>
+          </tr>
+        <% end %>
+      </table>
+      <% if @import.valid? %>
+        <%= submit_tag t('.import') %>
+      <% else %>
+        <%= submit_tag t('.import'), :disabled => 'disabled' %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

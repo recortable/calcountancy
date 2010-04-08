@@ -1,0 +1,9 @@
+<% content_for :top do %>
+  <%= title t('.title', :name => @account.name) %>
+<% end %>
+
+<%= link_to t('.continue'), user_account_path(@account) %>
+
+<table>
+  <%= render @movements %>
+</table>

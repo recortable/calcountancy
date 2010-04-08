@@ -1,0 +1,5 @@
+<% div_for( tag, :style => "background-color: #{tag.color}" ) do %>
+  <%= icon_link_to('delete_small', t('.delete_tag'), '#') if tag.size == 0 %>
+  <%= icon_link_to 'edit_small', t('.edit_tag'), '#' %>
+  <%= link_to "#{tag.name} (#{tag.size})", user_account_tag_path(tag.account, tag) %>
+<% end %>

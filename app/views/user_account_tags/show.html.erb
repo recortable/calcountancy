@@ -1,0 +1,7 @@
+<% content_for :top do  %>
+  <%= title t('.title', :name => @tag.account.name, :tag => @tag.name) %>
+<% end %>
+
+<table>
+  <%= render @tag.movements %>
+</table>

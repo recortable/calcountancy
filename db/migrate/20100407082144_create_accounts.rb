@@ -1,7 +1,10 @@
 class CreateAccounts < ActiveRecord::Migration
   def self.up
     create_table :accounts do |t|
-      t.string :number, :length => 30
+      t.string :number, :length => 10
+      t.string :entity_code, :length => 4
+      t.string :office_code, :length => 4
+      t.string :control_code, :length => 2
       t.string :name
       t.string :address
       t.string :owner

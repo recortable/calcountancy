@@ -1,2 +1,21 @@
+<% content_for :top do %>
+  <div class="actions">
+    <%= link_to t('.edit'), edit_user_account_path(@account) %>
+    <%= link_to t('.import'), new_user_account_import_path(@account) %>
+  </div>
+  <%= title t('.title', :name => @account.name)  %>
+<% end %>
 
-<% title @account.name  %>
+<div class="tag_manager">
+  <div class="actions">
+    <%= link_to t('.add_tag'), new_user_account_tag_path(@account) %>
+  </div>
+  <div class="tags">
+    <%= render @account.tags %>
+  </div>
+</div>
+
+
+<table>
+  <%= render @account.movements %>
+</table>

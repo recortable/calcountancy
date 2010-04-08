@@ -2,6 +2,9 @@
 @import "reset-min.css";
 @import "variables";
 
+@page_width: 1000px;
+@site_width: 140px;
+
 html {
     font-size: 90%;
     font-family: @serif;
@@ -14,18 +17,18 @@ a:hover {text-decoration: underline;}
 
 h1, h2, h3, h4 {font-family: @sans;}
 
-#user {text-align: right; width: 960px; margin: 30px auto 3px auto; }
-#legal {margin: 3px 0; font-size: 80%; letter-spacing: 0.2em; text-align: center; font-family: @sans; color: @grisoscuro;}
+#user {text-align: right; width: @page_width; margin: 30px auto 3px auto; }
+#legal {clear: both; margin-top: 3px; height: 4em; font-size: 80%; letter-spacing: 0.2em; text-align: center; font-family: @sans; color: @grisoscuro;}
 #legal a {letter-spacing: 0.5em; color: @grisoscuro;}
 #page {
     padding: 20px;
-    width: 960px; margin: 0px auto;
+    width: @page_width; margin: 0px auto;
     background-color: white;
     border: 1px solid @gris;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
 }
-#sitebar { float: left; width: 160px; }
+#sitebar { float: left; width: @site_width; }
 #sitebar ul {border-bottom: 1px solid @gris;}
 #sitebar li {font-family: @sans; border-top: 1px solid @gris;}
 #sitebar li.top {font-size: 130%; }
@@ -33,8 +36,11 @@ h1, h2, h3, h4 {font-family: @sans;}
 #sitebar li.top a {padding: 5px 5px;}
 #sitebar li a:hover {text-decoration: none; background-color: @grisclaro;}
 
-#content {margin-left: 180px;}
-#page > h1 {font-size: 200%; margin-bottom: 1em; margin-left: 180px;}
+#content {margin-left: @site_width + 20;}
+#top {margin-left: @site_width + 20;}
+#top  h1 {font-size: 200%; margin-bottom: 1em; }
+div.actions {margin-bottom: 5px;font-family: @sans; font-size: @font-small;}
+div.actions a {color: @grisoscuro; margin-right: 1em;}
 
 .account {margin: 0px 0 20px 0;}
 .account h1 {font-size: 150%; }
@@ -42,3 +48,40 @@ h1, h2, h3, h4 {font-family: @sans;}
 .account p label {padding-right: 5px;}
 .account .users {width: 100%; overflow: hidden; }
 .account .users span { float: left;  background-color: @gris; .button;}
+.account .actions a {font-family: @sans; color: @grisoscuro; font-size: @font-small;}
+.tag_manager {margin: 20px 0;}
+
+.tags {width: 100%; overflow: hidden;}
+.tags .tag {.button;}
+
+textarea {font-size: @font-small; padding: 2px; border: 1px solid @gris; font-family: @sans;}
+form.import textarea {display: block; width: 90%; height: 20em; margin-bottom: 10px;}
+
+fieldset li {width: 100%; overflow: hidden; margin: 3px 0;}
+fieldset li label {width: 10em; float: left; text-align: right; margin-right: 1em;}
+input[type=text], input[type=password] {padding: 2px; border: 1px solid @gris;}
+fieldset li.commit {margin-top: 10px;margin-left: 11em;}
+fieldset li.check_boxes ol {display: block; clear: both; width: 100%; overflow: hidden;}
+fieldset li.check_boxes li {display: block;}
+table {width: 100%;}
+td {padding: 3px 3px;}
+tr.even {background-color: @grisclaro;}
+
+div.properties {margin: 10px 0;}
+div.properties p {margin: 5px 0;}
+div.properties label {padding-right: 0.5em;}
+
+div.import.errors p {margin: 3px 0; font-family: @sans;color: @rojo;}
+td.import_state.import {color: @verde;}
+td.import_state.duplicate {color: @rojo;}
+p.records_to_import {color: @verde;}
+
+a.icon {display: block; text-indent: -1000px; overflow: hidden; opacity: 0.4;}
+a.icon:hover {opacity: 0.8;}
+a.icon_comment {width: 16px; height: 16px; background: url('/images/icons/chat_16x16.png');}
+a.icon_tag {width: 16px; height: 16px; background: url('/images/icons/tag_stroke_16x16.png');}
+a.icon_edit_small {width: 8px; height: 8px; background: url('/images/icons/pen_8x8.png');}
+a.icon_delete_small {width: 7px; height: 7px; background: url('/images/icons/x_7x7.png');}
+
+td .icon {float: left;}
+.tag .icon {float: right;margin: 3px 0 0 3px;}

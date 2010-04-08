@@ -8,6 +8,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem "newrelic_rpm"
+#  config.gem "acts-as-taggable-on", :version => '2.0.4'
   config.gem 'inherited_resources', :source => 'http://gemcutter.org', :version => '1.0.3'
   config.gem 'formtastic'
   config.gem 'searchlogic'

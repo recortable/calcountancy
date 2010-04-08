@@ -1,0 +1,13 @@
+<tr class="<%= cycle('even', 'odd') %>">
+  <td><%= movement.fecha %></td>
+  <td><%= movement.ammount_es %></td>
+  <td><%= movement.balance_es %></td>
+  <td><%= movement.concept %></td>
+  <td>
+    <div class="tags"><%= render movement.taggings %></div>
+  </td>
+  <td>
+    <%= icon_link_to 'comment', t('.add_comment'), edit_movement_path(movement, :display => 'comments') %>
+    <%= icon_link_to 'tag', t('.manage_tags'), edit_movement_path(movement, :display => 'tags') %>
+  </td>
+</tr>

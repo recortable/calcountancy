@@ -88,11 +88,13 @@ a:hover { text-decoration: underline; }
 h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif; }
 #user {
   text-align: right;
-  width: 960px;
+  width: 1000px;
   margin: 30px auto 3px auto;
 }
 #legal {
-  margin: 3px 0;
+  clear: both;
+  margin-top: 3px;
+  height: 4em;
   font-size: 80%;
   letter-spacing: 0.2em;
   text-align: center;
@@ -105,7 +107,7 @@ h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sa
 }
 #page {
   padding: 20px;
-  width: 960px;
+  width: 1000px;
   margin: 0px auto;
   background-color: white;
   border: 1px solid #e1e4e4;
@@ -114,7 +116,7 @@ h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sa
 }
 #sitebar {
   float: left;
-  width: 160px;
+  width: 140px;
 }
 #sitebar ul { border-bottom: 1px solid #e1e4e4; }
 #sitebar li {
@@ -131,11 +133,19 @@ h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sa
   text-decoration: none;
   background-color: #f0f0f0;
 }
-#content { margin-left: 180px; }
-#page > h1 {
+#content, #top { margin-left: 160px; }
+#top h1 {
   font-size: 200%;
   margin-bottom: 1em;
-  margin-left: 180px;
+}
+div.actions {
+  margin-bottom: 5px;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  font-size: 80%;
+}
+div.actions a {
+  color: gray;
+  margin-right: 1em;
 }
 .account { margin: 0px 0 20px 0; }
 .account h1 { font-size: 150%; }
@@ -156,4 +166,108 @@ h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sa
   -webkit-border-radius: 0.5em;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
   font-size: 80%;
+}
+.account .actions a {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  color: gray;
+  font-size: 80%;
+}
+.tag_manager { margin: 20px 0; }
+.tags {
+  width: 100%;
+  overflow: hidden;
+}
+.tags .tag {
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 3px 0 0;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  font-size: 80%;
+}
+textarea {
+  font-size: 80%;
+  padding: 2px;
+  border: 1px solid #e1e4e4;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+}
+form.import textarea {
+  display: block;
+  width: 90%;
+  height: 20em;
+  margin-bottom: 10px;
+}
+fieldset li {
+  width: 100%;
+  overflow: hidden;
+  margin: 3px 0;
+}
+fieldset li label {
+  width: 10em;
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+}
+input[type=text], input[type=password] {
+  padding: 2px;
+  border: 1px solid #e1e4e4;
+}
+fieldset li.commit {
+  margin-top: 10px;
+  margin-left: 11em;
+}
+fieldset li.check_boxes ol {
+  display: block;
+  clear: both;
+  width: 100%;
+  overflow: hidden;
+}
+fieldset li.check_boxes li { display: block; }
+table { width: 100%; }
+td { padding: 3px 3px; }
+tr.even { background-color: #f0f0f0; }
+div.properties { margin: 10px 0; }
+div.properties p { margin: 5px 0; }
+div.properties label { padding-right: 0.5em; }
+div.import.errors p {
+  margin: 3px 0;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  color: #cc0000;
+}
+td.import_state.import { color: #00cc00; }
+td.import_state.duplicate { color: #cc0000; }
+p.records_to_import { color: #00cc00; }
+a.icon {
+  display: block;
+  text-indent: -1000px;
+  overflow: hidden;
+  opacity: 0.4;
+}
+a.icon:hover { opacity: 0.8; }
+a.icon_comment {
+  width: 16px;
+  height: 16px;
+  background: url('/images/icons/chat_16x16.png');
+}
+a.icon_tag {
+  width: 16px;
+  height: 16px;
+  background: url('/images/icons/tag_stroke_16x16.png');
+}
+a.icon_edit_small {
+  width: 8px;
+  height: 8px;
+  background: url('/images/icons/pen_8x8.png');
+}
+a.icon_delete_small {
+  width: 7px;
+  height: 7px;
+  background: url('/images/icons/x_7x7.png');
+}
+td .icon { float: left; }
+.tag .icon {
+  float: right;
+  margin: 3px 0 0 3px;
 }
