@@ -32,6 +32,14 @@ es:
       iban: "IBAN"
       bic: "BIC"
 
+  taggings:
+    create:
+      success: "Se ha añadido la etiqueta '{{tag}}' a '{{movement}}'"
+    destroy:
+      success: "Se ha borrado la etiqueta '{{tag}}' de '{{movement}}'"
+    tagging:
+      delete_tag: "Eliminar esta etiqueta de este movimiento"
+
   movements:
     movement:
       manage_tags: "Añadir o quitar etiquetas"

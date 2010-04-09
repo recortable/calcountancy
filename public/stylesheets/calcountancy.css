@@ -138,6 +138,14 @@ h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sa
   font-size: 200%;
   margin-bottom: 1em;
 }
+#flash p {
+  display: block;
+  background-color: yellow;
+  padding: 5px 0;
+  text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 div.actions {
   margin-bottom: 5px;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
@@ -170,21 +178,6 @@ div.actions a {
 .account .actions a {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
   color: gray;
-  font-size: 80%;
-}
-.tag_manager { margin: 20px 0; }
-.tags {
-  width: 100%;
-  overflow: hidden;
-}
-.tags .tag {
-  display: block;
-  float: left;
-  padding: 0.2em 1em;
-  margin: 1px 3px 0 0;
-  -moz-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
   font-size: 80%;
 }
 textarea {
@@ -266,8 +259,45 @@ a.icon_delete_small {
   height: 7px;
   background: url('/images/icons/x_7x7.png');
 }
+.tag_manager { margin: 20px 0; }
+.tags {
+  width: 100%;
+  overflow: hidden;
+}
+.tags .tag {
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 3px 0 0;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  font-size: 80%;
+}
 td .icon { float: left; }
 .tag .icon {
   float: right;
   margin: 3px 0 0 3px;
 }
+.tagging .icon {
+  float: right;
+  margin: 3px 0 0 3px;
+}
+.taggings {
+  width: 100%;
+  overflow: hidden;
+  padding: 3px 0;
+  border: 1px solid transparent;
+}
+.taggings .tagging {
+  display: block;
+  float: left;
+  padding: 0.2em 1em;
+  margin: 1px 3px 0 0;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  font-size: 80%;
+}
+.taggings.active { border: 1px solid black; }
+.taggings.drophover { border: 1px solid #cc0000; }

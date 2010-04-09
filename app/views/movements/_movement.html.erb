@@ -4,10 +4,10 @@
   <td><%= movement.balance_es %></td>
   <td><%= movement.concept %></td>
   <td>
-    <div class="tags"><%= render movement.taggings %></div>
+    <div id="tagging_movement_<%= movement.id %>" class="tags taggings"><%= render movement.taggings %></div>
   </td>
   <td>
-    <%= icon_link_to 'comment', t('.add_comment'), edit_movement_path(movement, :display => 'comments') %>
-    <%= icon_link_to 'tag', t('.manage_tags'), edit_movement_path(movement, :display => 'tags') %>
+    <%#= icon_link_to 'comment', t('.add_comment'), edit_movement_path(movement, :display => 'comments') %>
+    <%#= icon_link_to 'tag', t('.manage_tags'), edit_movement_path(movement, :display => 'tags') %>
   </td>
 </tr>

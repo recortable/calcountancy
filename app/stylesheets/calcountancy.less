@@ -39,6 +39,7 @@ h1, h2, h3, h4 {font-family: @sans;}
 #content {margin-left: @site_width + 20;}
 #top {margin-left: @site_width + 20;}
 #top  h1 {font-size: 200%; margin-bottom: 1em; }
+#flash p {display: block; background-color: yellow; padding: 5px 0; text-align: center; .rounded; }
 div.actions {margin-bottom: 5px;font-family: @sans; font-size: @font-small;}
 div.actions a {color: @grisoscuro; margin-right: 1em;}
 
@@ -49,10 +50,7 @@ div.actions a {color: @grisoscuro; margin-right: 1em;}
 .account .users {width: 100%; overflow: hidden; }
 .account .users span { float: left;  background-color: @gris; .button;}
 .account .actions a {font-family: @sans; color: @grisoscuro; font-size: @font-small;}
-.tag_manager {margin: 20px 0;}
 
-.tags {width: 100%; overflow: hidden;}
-.tags .tag {.button;}
 
 textarea {font-size: @font-small; padding: 2px; border: 1px solid @gris; font-family: @sans;}
 form.import textarea {display: block; width: 90%; height: 20em; margin-bottom: 10px;}
@@ -83,5 +81,14 @@ a.icon_tag {width: 16px; height: 16px; background: url('/images/icons/tag_stroke
 a.icon_edit_small {width: 8px; height: 8px; background: url('/images/icons/pen_8x8.png');}
 a.icon_delete_small {width: 7px; height: 7px; background: url('/images/icons/x_7x7.png');}
 
+.tag_manager {margin: 20px 0;}
+.tags {width: 100%; overflow: hidden;}
+.tags .tag {.button;}
+
 td .icon {float: left;}
-.tag .icon {float: right;margin: 3px 0 0 3px;}
+.tag .icon, .tagging .icon {float: right;margin: 3px 0 0 3px;}
+
+.taggings {width: 100%; overflow: hidden; padding: 3px 0; border: 1px solid transparent;}
+.taggings .tagging {.button;}
+.taggings.active {border: 1px solid black;}
+.taggings.drophover {border: 1px solid @rojo;}
