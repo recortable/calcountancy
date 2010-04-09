@@ -82,3 +82,5 @@ es:
       title: "Añadir tag a la cuenta '{{name}}'"
     show:
       title: "Movimientos con etiqueta '{{tag}}' en la cuenta '{{name}}'"
+    edit:
+      title: "Editando etiqueta '{{tag}}'"

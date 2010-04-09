@@ -1,5 +1,5 @@
 
 var content = '<%= escape_javascript render(@movement.taggings) %>';
 $("#tagging_movement_<%= @movement.id %>").html(content);
-$.cy.flash("<%= t('.success', :tag => @tag, :movement => @movement.concept) %>");
+$.cy.flash("<%= t('.success', :tag => @tag.name, :movement => @movement.concept) %>");
 

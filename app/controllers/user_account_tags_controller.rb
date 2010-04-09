@@ -21,6 +21,12 @@ class UserAccountTagsController < ApplicationController
     end
   end
 
+  def update
+    update! do |success, failure|
+      success.html {redirect_to user_account_tags_path(@account)}
+    end
+  end
+
 
   private
   def load_account
