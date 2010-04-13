@@ -47,25 +47,33 @@
             $(this).ajaxSubmit();
             return false;
         });
+        $(".action_manager .select_none").click(function() {
+            $("input.selector:checked").attr('checked', false);
+            $("tr.selected").removeClass('selected');
+        })
+        $(".action_manager .select_all").click(function() {
+            $("input.selector").attr('checked', true);
+            $("tbody tr").addClass('selected');
+        })
 
 
-    $("a.delete_tagging").live('click', function() {
-        if (confirm($(this).attr('alt'))) {
-            $.post($(this).attr('href'), {
-                '_method' : 'delete'
-            }, function(data) {
-                eval(data);
-            }, 'js');
-        }
-        return false;
+        $("a.delete_tagging").live('click', function() {
+            if (confirm($(this).attr('alt'))) {
+                $.post($(this).attr('href'), {
+                    '_method' : 'delete'
+                }, function(data) {
+                    eval(data);
+                }, 'js');
+            }
+            return false;
+        });
     });
-    });
 
-$('#flash').ajaxError(function() {
-    $.calc.flash("Se ha producido un error!! :-(");
-});
-$('#flash').ajaxSend(function() {
-    $.calc.flash("Enviando, espera un momento...");
-})
+    $('#flash').ajaxError(function() {
+        $.calc.flash("Se ha producido un error!! :-(");
+    });
+    $('#flash').ajaxSend(function() {
+        $.calc.flash("Enviando, espera un momento...");
+    })
 
 })(jQuery);

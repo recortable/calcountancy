@@ -1,34 +1,37 @@
 
 <% form_for :bulk_action, :url => user_account_bulk_action_path(@account), :html => {:class=> 'action_manager'} do |form| %>
-<div>
-  <%= form.hidden_field :movement_ids %>
-  Aplicar la siguiente etiqueta: <%= select 'bulk_action', :label, @account.tags.collect {|t| [t.name, t.id]} %> a los
-  <span class="selected_counter">0</span> elementos seleccionados <%= form.submit 'Venga!' %>
-</div>
+  <div>
+    <div class="actions">
+      Seleccionar: <a class="select_all" href="#">todos</a> <a class="select_none" href="#">ninguno</a>
+    </div>
+    <%= form.hidden_field :movement_ids %>
+    Aplicar la siguiente etiqueta: <%= select 'bulk_action', :label, @account.tags.collect {|t| [t.name, t.id]} %> a los
+    <span class="selected_counter">0</span> elementos seleccionados <%= form.submit 'Venga!' %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <td></td><td>Fecha</td><td>Cantidad</td><td>Saldo final</td><td>Concepto</td><td>Etiquetas</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% movements.each do |movement| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= check_box_tag "movement-#{movement.id}", movement.id, false, :class => 'selector' %></td>
-        <td><%= movement.fecha %></td>
-        <td class="<%= movement.type %>"><%= euros movement.ammount %></td>
-        <td ><%= euros movement.balance %></td>
-        <td><%= movement.concept %></td>
-        <td>
-          <div id="tagging_movement_<%= movement.id %>" class="tags taggings"><%= render movement.taggings %></div>
-        </td>
-        <td>
-  <%#= icon_link_to 'comment', t('.add_comment'), edit_movement_path(movement, :display => 'comments') %>
-  <%#= icon_link_to 'tag', t('.manage_tags'), edit_movement_path(movement, :display => 'tags') %>
-        </td>
+        <td></td><td>Fecha</td><td>Cantidad</td><td>Saldo final</td><td>Concepto</td><td>Etiquetas</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% movements.each do |movement| %>
+        <tr>
+          <td><%= check_box_tag "movement-#{movement.id}", movement.id, false, :class => 'selector' %></td>
+          <td><%= movement.fecha %></td>
+          <td class="<%= movement.type %>"><%= euros movement.ammount %></td>
+          <td ><%= euros movement.balance %></td>
+          <td><%= movement.concept %></td>
+          <td>
+            <div id="tagging_movement_<%= movement.id %>" class="tags taggings"><%= render movement.taggings %></div>
+          </td>
+          <td>
+    <%#= icon_link_to 'comment', t('.add_comment'), edit_movement_path(movement, :display => 'comments') %>
+    <%#= icon_link_to 'tag', t('.manage_tags'), edit_movement_path(movement, :display => 'tags') %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% end %>

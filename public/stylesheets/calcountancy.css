@@ -312,5 +312,5 @@ td .icon { float: left; }
 .taggings.active { border: 1px solid black; }
 .taggings.drophover { border: 1px solid #990000; }
 #chart { padding: 10px 0px; }
-.action_manager { margin-bottom: 20px; }
+.action_manager { margin-bottom: 30px; }
 tr.selected { background-color: yellow; }
