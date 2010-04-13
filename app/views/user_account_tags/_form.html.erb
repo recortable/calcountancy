@@ -1,4 +1,13 @@
-
+<% content_for(:head) do %>
+  <script type="text/javascript" src="/javascripts/farbtastic.js"></script>
+  <link rel="stylesheet" href="/stylesheets/farbtastic.css" type="text/css" />
+  <script type="text/javascript">
+    jQuery(function($) {
+      $("#colorpicker").farbtastic('#tag_color');
+    });
+  </script>
+<% end %>
+  
 <% semantic_form_for([:user, @account, @tag]) do |form| %>
   <%= form.error_messages %>
   <% form.inputs do %>
@@ -9,3 +18,7 @@
     <%= form.commit_button %>
   <% end %>
 <% end %>
+
+<div id="colorpicker">
+  
+</div>

@@ -227,6 +227,7 @@ fieldset li.check_boxes ol {
   overflow: hidden;
 }
 fieldset li.check_boxes li { display: block; }
+#colorpicker { margin-left: 11em; }
 table {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
   width: 100%;
