@@ -6,17 +6,7 @@
   <%= title t('.title', :name => @account.name)  %>
 <% end %>
 
-<div class="tag_manager">
-  <div class="actions">
-    <%= link_to t('.add_tag'), new_user_account_tag_path(@account) %>
-  </div>
-  <div class="tags">
-    <%= render @account.tags %>
-  </div>
-  <p>Arrastra la etiqueta al movimiento para aplicar</p>
-</div>
 
 
-<table>
-  <%= render @account.movements %>
-</table>
+<%= render '/month_summaries/summaries', :object => @account.month_summaries %>
+

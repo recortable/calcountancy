@@ -85,7 +85,7 @@ a {
   text-decoration: none;
 }
 a:hover { text-decoration: underline; }
-h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif; }
+h1, h2, h3, h4 { font-family: Georgia, Cambria, Times, serif; }
 #user {
   text-align: right;
   width: 1000px;
@@ -133,10 +133,19 @@ h1, h2, h3, h4 { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sa
   text-decoration: none;
   background-color: #f0f0f0;
 }
-#content, #top { margin-left: 160px; }
+#content { margin-left: 160px; }
+#top {
+  font-family: Georgia, Cambria, Times, serif;
+  margin-left: 160px;
+  padding-bottom: 20px;
+}
 #top h1 {
   font-size: 200%;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
+}
+#top h2 {
+  font-size: 130%;
+  margin-bottom: 5px;
 }
 #flash p {
   display: block;
@@ -218,20 +227,28 @@ fieldset li.check_boxes ol {
   overflow: hidden;
 }
 fieldset li.check_boxes li { display: block; }
-table { width: 100%; }
+table {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  width: 100%;
+  border-bottom: 1px solid #e1e4e4;
+}
 td { padding: 3px 3px; }
-tr.even { background-color: #f0f0f0; }
+td.number { text-align: right; }
+thead tr { font-weight: bold; }
+tbody tr { border-top: 1px solid #e1e4e4; }
+td.positive { color: #008800; }
+td.negative { color: #990000; }
 div.properties { margin: 10px 0; }
 div.properties p { margin: 5px 0; }
 div.properties label { padding-right: 0.5em; }
 div.import.errors p {
   margin: 3px 0;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
-  color: #cc0000;
+  color: #990000;
 }
-td.import_state.import { color: #00cc00; }
-td.import_state.duplicate { color: #cc0000; }
-p.records_to_import { color: #00cc00; }
+td.import_state.import { color: #008800; }
+td.import_state.duplicate { color: #990000; }
+p.records_to_import { color: #008800; }
 a.icon {
   display: block;
   text-indent: -1000px;
@@ -259,7 +276,7 @@ a.icon_delete_small {
   height: 7px;
   background: url('/images/icons/x_7x7.png');
 }
-.tag_manager { margin: 20px 0; }
+.tag_manager { margin-bottom: 20px; }
 .tags {
   width: 100%;
   overflow: hidden;
@@ -300,4 +317,4 @@ td .icon { float: left; }
   font-size: 80%;
 }
 .taggings.active { border: 1px solid black; }
-.taggings.drophover { border: 1px solid #cc0000; }
+.taggings.drophover { border: 1px solid #990000; }

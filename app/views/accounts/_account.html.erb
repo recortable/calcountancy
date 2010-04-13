@@ -4,7 +4,7 @@
   <div class="users">
     <% account.users.each do |user| %><%= content_tag :span, user.name %><% end %>
   </div>
-  <p><label><%= t('.number') %>:</label><%= account.number %></p>
+  <p><label><%= t('.number') %>:</label><%= account.complete_number %></p>
   <p><label><%= t('.owner') %>:</label><%= account.owner %></p>
   <p><label><%= t('.owner_address') %>:</label><%= account.owner_address %></p>
   <p><label><%= t('.bic') %>:</label><%= account.bic %></p>

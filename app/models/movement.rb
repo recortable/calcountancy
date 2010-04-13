@@ -12,14 +12,17 @@ class Movement < ActiveRecord::Base
     Date.from_db(self.date).fecha
   end
 
-  def balance_es
-    "%5.2f" % (self.balance.to_f / 100)
+  def import?
+    import == 'import'
   end
 
-  def ammount_es
-    "%5.2f" % (self.ammount.to_f / 100)
+  def type
+    ammount < 0 ? 'negative' : 'positive'
   end
 
+  def before_balance
+    balance - ammount
+  end
 
   def generate_code
     self.code = "#{self.date}#{self.ammount}#{self.balance}"

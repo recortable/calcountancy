@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100408093842) do
+ActiveRecord::Schema.define(:version => 20100413035812) do
 
   create_table "accounts", :force => true do |t|
     t.string   "number"
@@ -34,6 +34,23 @@ ActiveRecord::Schema.define(:version => 20100408093842) do
     t.datetime "updated_at"
   end
 
+  create_table "month_summaries", :force => true do |t|
+    t.integer  "account_id"
+    t.integer  "year"
+    t.integer  "month"
+    t.integer  "positive_ammount", :default => 0
+    t.integer  "negative_ammount", :default => 0
+    t.integer  "before_balance",   :default => 0
+    t.integer  "after_balance",    :default => 0
+    t.string   "tag_summary"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "month_summaries", ["month"], :name => "index_month_summaries_on_month"
+  add_index "month_summaries", ["year"], :name => "index_month_summaries_on_year"
+
   create_table "movements", :force => true do |t|
     t.integer  "account_id"
     t.string   "code"
@@ -45,6 +62,8 @@ ActiveRecord::Schema.define(:version => 20100408093842) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "movements", ["date"], :name => "index_movements_on_date"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

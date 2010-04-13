@@ -5,5 +5,5 @@
 <%= link_to t('.continue'), user_account_path(@account) %>
 
 <table>
-  <%= render @movements %>
+  <%= render 'movements/movements', :object => @movements %>
 </table>

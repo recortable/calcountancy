@@ -9,6 +9,7 @@ es:
     initial_balance: "Saldo inicial"
     end_balance: "Saldo final"
 
+
   import:
     records_to_import: "Número de movimientos a importar"
     state:
@@ -41,9 +42,10 @@ es:
       delete_tag: "Eliminar esta etiqueta de este movimiento"
 
   movements:
-    movement:
+    movements:
       manage_tags: "Añadir o quitar etiquetas"
       add_comment: "Añadir comentario"
+      add_tag: "Añadir etiqueta"
     edit:
       title: "Modificar movimiento de la cuenta '{{name}}'"
 
@@ -54,7 +56,6 @@ es:
       title: "Cuenta '{{name}}'"
       import: "Importar de Arquia"
       edit: "Modificar datos"
-      add_tag: "Añadir etiqueta"
     edit:
       title: "Modificar datos de la cuenta '{{name}}'"
 
@@ -84,3 +85,23 @@ es:
       title: "Movimientos con etiqueta '{{tag}}' en la cuenta '{{name}}'"
     edit:
       title: "Editando etiqueta '{{tag}}'"
+
+  user_account_month_summaries:
+    show:
+      title: "Movimientos en la cuenta '{{account}}'"
+      edit: "Modificar"
+
+  months:
+    month-1: Enero
+    month-2: Febrero
+    month-3: Marzo
+    month-4: Abril
+    month-5: Mayo
+    month-6: Junio
+    month-7: Julio
+    month-8: Agosto
+    month-9: Septiembre
+    month-10: Octubre
+    month-11: Noviembre
+    month-12: Diciembre
+

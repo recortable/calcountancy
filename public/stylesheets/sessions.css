@@ -97,7 +97,7 @@ form {
 form label { display: block; }
 fieldset li { margin: 10px 0; }
 fieldset.buttons { margin-top: 20px; }
-p.inline-errors { color: #cc0000; }
+p.inline-errors { color: #990000; }
 input[type=text], input[type=password] {
   padding: 2px;
   background-color: white;

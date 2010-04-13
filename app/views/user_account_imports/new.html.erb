@@ -1,5 +1,6 @@
 <% content_for :top do %>
   <%= title t('.title', :name => @account.name) %>
+<h2><%= @account.complete_number %></h2>
 <% end %>
 
 <div class="properties">
@@ -32,21 +33,30 @@
     <% form_tag(user_account_import_path(@account)) do %>
       <%= hidden_field_tag :import, params[:import] %>
       <table>
-        <% @import.movements.each_with_index do |movement, index| %>
-          <tr class="<%= cycle('even', 'odd') %>">
-            <td class="import_state <%= movement.import %>">
-              <%= t("import.state.#{movement.import}") %>
-              <%= hidden_field_tag 'movement[][date]', movement.date, :id => "movement_date_#{index}" %>
-              <%= hidden_field_tag 'movement[][ammount]', movement.ammount, :id => "movement_ammount_#{index}" %>
-              <%= hidden_field_tag 'movement[][balance]', movement.balance, :id => "movement_balance_#{index}" %>
-              <%= hidden_field_tag 'movement[][concept]', movement.concept, :id => "movement_concept_#{index}" %>
-            </td>
-            <td><%= movement.fecha %></td>
-            <td><%= movement.ammount_es %></td>
-            <td><%= movement.balance_es %></td>
-            <td><%= movement.concept %></td>
+        <thead>
+          <tr>
+            <td>Estado</td><td>Fecha</td><td>Cantidad</td><td>Saldo</td><td>Concepto</td>
           </tr>
-        <% end %>
+        </thead>
+        <tbody>
+          <% @import.movements.each_with_index do |movement, index| %>
+            <tr>
+              <td class="import_state <%= movement.import %>">
+                <%= t("import.state.#{movement.import}") %>
+                <% if movement.import? %>
+                  <%= hidden_field_tag 'movement[][date]', movement.date, :id => "movement_date_#{index}" %>
+                  <%= hidden_field_tag 'movement[][ammount]', movement.ammount, :id => "movement_ammount_#{index}" %>
+                  <%= hidden_field_tag 'movement[][balance]', movement.balance, :id => "movement_balance_#{index}" %>
+                  <%= hidden_field_tag 'movement[][concept]', movement.concept, :id => "movement_concept_#{index}" %>
+                <% end %>
+              </td>
+              <td><%= movement.fecha %></td>
+              <td><%= euros movement.ammount %></td>
+              <td><%= euros movement.balance %></td>
+              <td><%= movement.concept %></td>
+            </tr>
+          <% end %>
+        </tbody>
       </table>
       <% if @import.valid? %>
         <%= submit_tag t('.import') %>

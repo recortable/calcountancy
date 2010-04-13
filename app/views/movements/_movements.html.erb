@@ -1,0 +1,34 @@
+<div class="tag_manager">
+  <div class="actions">
+    <%= link_to t('.add_tag'), new_user_account_tag_path(@account) %>
+  </div>
+  <div class="tags">
+    <%= render @account.tags %>
+  </div>
+  <p>Arrastra la etiqueta al movimiento para aplicar</p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <td>Fecha</td><td>Cantidad</td><td>Saldo final</td><td>Concepto</td><td>Etiquetas</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% movements.each do |movement| %>
+      <tr>
+        <td><%= movement.fecha %></td>
+        <td class="<%= movement.type %>"><%= euros movement.ammount %></td>
+        <td ><%= euros movement.balance %></td>
+        <td><%= movement.concept %></td>
+        <td>
+          <div id="tagging_movement_<%= movement.id %>" class="tags taggings"><%= render movement.taggings %></div>
+        </td>
+        <td>
+  <%#= icon_link_to 'comment', t('.add_comment'), edit_movement_path(movement, :display => 'comments') %>
+  <%#= icon_link_to 'tag', t('.manage_tags'), edit_movement_path(movement, :display => 'tags') %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
