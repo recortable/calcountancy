@@ -1,0 +1,11 @@
+
+$("input.selector:checked").attr('checked', false);
+$("tr.selected").removeClass('selected');
+
+var content;
+<% @action.movements.each do |movement| %>
+  content = '<%= escape_javascript render(movement.taggings) %>';
+  $("#tagging_movement_<%= movement.id %>").html(content);
+<% end %>
+  
+$.calc.flash("<%= escape_javascript  t('.success', :tag => @action.tag.name, :number => @action.size) %>");

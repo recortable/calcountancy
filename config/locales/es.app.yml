@@ -91,6 +91,10 @@ es:
       title: "Movimientos en la cuenta '{{account}}'"
       edit: "Modificar"
 
+  bulk_actions:
+    create:
+      success: "Se aplicó la etiqueta {{tag}} a {{number}} movimientos."
+
   months:
     month-1: Enero
     month-2: Febrero
