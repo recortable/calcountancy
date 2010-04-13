@@ -1,19 +1,72 @@
+<% content_for :head do %>
+
+  <script type="text/javascript">
+    jQuery(function($) {
+      var visible = false;
+      
+      function createChart() {
+        var src="http://chart.apis.google.com/chart?chs=800x300&chxt=x,y,r";
+        src += "&cht=bvo";
+        var min = 0;
+        var max = 0;
+        var data = "";
+        var labels = "";
+        var colors = "";
+        $("#data tr").each(function() {
+          if (data.length != 0) {
+            data += ",";
+            labels += "|";
+            colors += "|";
+          }
+          var value = $(this).find('.balance').html();
+          value = value.replace(' €', '');
+          value = value.replace('.', '');
+          value = value.replace(',', '.');
+          var fvalue = parseFloat(value);
+          max = Math.max(max, fvalue);
+          min = Math.min(min, fvalue);
+          data += value;
+          colors += fvalue < 0 ? 'cc0000' : '00cc00';
+          var label = $(this).find('.label').html();
+          labels += label;
+        });
+        src += "&chd=t:" + data;
+        src += "&chxl=0:|" + labels;
+        src += "&chco=" + colors;
+        src += "&chds=" + min + "," + max;
+        src += "&chxr=1," + min + "," + max;
+        //$("#chartdata").html(src);
+        var image = $("<img />").attr('src', src);
+        $("#chart").empty().append(image);
+      }
+
+      $("#createChart").click(function() {
+        createChart();
+        return false;
+      })
+    })
+  </script>
+
+<% end %>
+
+<div id="chart"><%= link_to 'Ver gráfico', '#', :id => 'createChart' %></div>
+
 <table>
   <thead>
     <tr>
       <td>Mes</td>
       <td class="number">Entradas</td><td class="number">Salidas</td>
-      <td class="number">Inicial</td><td class="number">Final</td>
+      <td class="number">Saldo</td>
       <td class="number">Balance</td>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="data">
     <% summaries.each do |summary| %>
       <tr>
-        <td class="label"><a href="<%= user_account_month_summary_path(summary.account, summary) %>"><%= summary.year %> <%= mes(summary.month) %></a></td>
+        <td class="label" style="display: none;"><%= summary.month %></td>
+        <td ><a href="<%= user_account_month_summary_path(summary.account, summary) %>"><%= summary.year %> <%= mes(summary.month) %></a></td>
         <td class="number positive"><%= euros summary.positive_ammount %></td>
         <td class="number negative"><%= euros summary.negative_ammount %></td>
-        <td class="number"><%= euros summary.before_balance %></td>
         <td class="number"><%= euros summary.after_balance %></td>
         <td class="balance number <%= summary.type %>"><%= euros summary.balance %></td>
       </tr>
