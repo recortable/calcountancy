@@ -94,7 +94,7 @@ h1, h2, h3, h4 { font-family: Georgia, Cambria, Times, serif; }
 #legal {
   clear: both;
   margin-top: 3px;
-  height: 4em;
+  height: 7em;
   font-size: 80%;
   letter-spacing: 0.2em;
   text-align: center;
@@ -316,12 +316,25 @@ td .icon { float: left; }
 .taggings.active { border: 1px solid black; }
 .taggings.drophover { border: 1px solid #990000; }
 #chart { padding: 10px 0px; }
-.action_manager {
+.no_action_manager {
   padding: 10px;
   margin: 20px 0;
   border: 1px solid #e1e4e4;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+}
+.action_manager {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.8;
+  padding: 10px;
+  color: white;
+  width: 960px;
+  margin: 0 auto;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
 }
 tr.selected { background-color: yellow; }
 .period {

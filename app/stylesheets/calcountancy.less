@@ -18,7 +18,7 @@ a:hover {text-decoration: underline;}
 h1, h2, h3, h4 {font-family: @serif;}
 
 #user {text-align: right; width: @page_width; margin: 30px auto 3px auto; }
-#legal {clear: both; margin-top: 3px; height: 4em; font-size: 80%; letter-spacing: 0.2em; text-align: center; font-family: @sans; color: @grisoscuro;}
+#legal {clear: both; margin-top: 3px; height: 7em; font-size: 80%; letter-spacing: 0.2em; text-align: center; font-family: @sans; color: @grisoscuro;}
 #legal a {letter-spacing: 0.5em; color: @grisoscuro;}
 #page {
     padding: 20px;
@@ -105,7 +105,9 @@ td .icon {float: left;}
 
 #chart {padding: 10px 0px;}
 
-.action_manager {padding: 10px; margin: 20px 0; border: 1px solid @gris; .rounded;}
+.no_action_manager {padding: 10px; margin: 20px 0; border: 1px solid @gris; .rounded;}
+.action_manager {position: fixed; left: 0; right: 0; bottom: 0; background-color: black; opacity: 0.8;
+    padding: 10px; color: white; width: 960px; margin: 0 auto; font-family: @sans;}
 tr.selected {background-color: yellow;}
 
 .period {margin: 0px 0 20px 0; font-size: 120%;}

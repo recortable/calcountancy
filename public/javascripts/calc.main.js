@@ -34,9 +34,19 @@
     $(function() {
         var am = $("form.action_manager");
         am.attr('action', am.attr('action') + ".js")
+        
+        var submit = $("form.action_manager input[type=submit]");
+        submit.attr('disabled', 'disabled');
         $("input.selector").click(function() {
             $(this).parent().parent().toggleClass('selected');
-            $(".selected_counter").html($("tr.selected").size());
+            var selected_count = $("tr.selected").size();
+            $(".selected_counter").html(selected_count);
+            if (selected_count > 0) {
+                submit.removeAttr('disabled');
+            } else {
+                submit.attr('disabled', 'disabled');
+            }
+
         });
         $("form.action_manager").submit(function() {
             var ids = []
