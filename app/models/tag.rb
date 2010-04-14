@@ -2,6 +2,7 @@
 # and open the template in the editor.
 
 class Tag < ActiveRecord::Base
+  default_scope :order => 'NAME'
   belongs_to :account
   has_many :taggings
   has_many :movements, :through => :taggings

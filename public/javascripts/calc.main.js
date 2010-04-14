@@ -60,10 +60,12 @@
         $(".action_manager .select_none").click(function() {
             $("input.selector:checked").attr('checked', false);
             $("tr.selected").removeClass('selected');
+            return false;
         })
         $(".action_manager .select_all").click(function() {
             $("input.selector").attr('checked', true);
             $("tbody tr").addClass('selected');
+            return false;
         })
 
 
