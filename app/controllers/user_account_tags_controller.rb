@@ -14,6 +14,11 @@ class UserAccountTagsController < ApplicationController
     new!
   end
 
+  def show
+    @tag = Tag.find(params[:id])
+    @period = Period.new(@account, @tag.movements)
+  end
+
   def create
     @tag = @account.tags.build(params[:tag])
     create! do |success, failure|

@@ -1,0 +1,10 @@
+<% content_for :top do %>
+  <%= title t('.title',  :year => @year, :account => @account.name)  %>
+<h2>Desde el <%= @period.begin_date.mday %> de <%= mes @period.begin_date.month %> del <%= @period.begin_date.year %>
+(<%= euros_of @period.before_balance %>)</h2>
+<h2>Hasta el <%= @period.end_date.mday %> de <%= mes @period.end_date.month %> del <%= @period.end_date.year %>
+(<%= euros_of @period.after_balance %>)</h2>
+<h2>Balance: <%= euros_of @period.balance %></h2>
+<% end %>
+
+<%= render :partial => 'movements/movements', :object => @period.movements %>

@@ -16,6 +16,12 @@ module ApplicationHelper
     link_to text, url, extra
   end
 
+  def euros_of(number, options = {})
+    clazz  = options[:class] ? options[:class] : ''
+    clazz = clazz + " #{(number >= 0 ? 'positive ammount' : 'negative ammount')}"
+    content_tag(:span, euros(number), {:class => clazz}.merge!(options))
+  end
+
   def euros(number, options={})
     # :currency_before => false puts the currency symbol after the number
     # default format: $12,345,678.90

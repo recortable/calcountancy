@@ -9,7 +9,11 @@ class Movement < ActiveRecord::Base
   has_many :tags, :through => :taggings
 
   def fecha
-    Date.from_db(self.date).fecha
+    d.fecha
+  end
+
+  def d
+    @d ||= Date.from_db(self.date)
   end
 
   def import?

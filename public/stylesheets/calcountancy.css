@@ -229,8 +229,10 @@ td { padding: 3px 3px; }
 td.number { text-align: right; }
 thead tr { font-weight: bold; }
 tbody tr { border-top: 1px solid #e1e4e4; }
-td.positive { color: #008800; }
-td.negative { color: #990000; }
+td.positive, .ammount.positive { color: #008800; }
+td.negative, .ammount.negative { color: #990000; }
+td.concept { font-family: Georgia, Cambria, Times, serif; }
+.ammount { white-space: nowrap; }
 div.properties { margin: 10px 0; }
 div.properties p { margin: 5px 0; }
 div.properties label { padding-right: 0.5em; }
@@ -283,6 +285,8 @@ a.icon_delete_small {
   -webkit-border-radius: 0.5em;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
   font-size: 80%;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 td .icon { float: left; }
 .tag .icon {
@@ -312,5 +316,20 @@ td .icon { float: left; }
 .taggings.active { border: 1px solid black; }
 .taggings.drophover { border: 1px solid #990000; }
 #chart { padding: 10px 0px; }
-.action_manager { margin-bottom: 30px; }
+.action_manager {
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #e1e4e4;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
 tr.selected { background-color: yellow; }
+.period {
+  margin: 0px 0 20px 0;
+  font-size: 120%;
+}
+.period p { margin-bottom: 5px; }
+#calc_graph {
+  margin-bottom: 10px;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+}

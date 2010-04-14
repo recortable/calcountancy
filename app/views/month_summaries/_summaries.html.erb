@@ -36,20 +36,32 @@
         src += "&chds=" + min + "," + max;
         src += "&chxr=1," + min + "," + max;
         //$("#chartdata").html(src);
-        var image = $("<img />").attr('src', src);
-        $("#chart").empty().append(image);
+        var image = $("<img />").attr('id', 'generated_chart').attr('src', src);
+        $("#chart").append(image);
+        visible = true;
       }
 
-      $("#createChart").click(function() {
-        createChart();
+      $("#toggleChart").click(function() {
+        if (visible) {
+          $("#generated_chart").hide();
+          $("#toggleChart").html("Mostrar gráfico");
+        } else {
+          $("#generated_chart").show();
+          $("#toggleChart").html("Ocultar gráfico");
+        }
+        visible = !visible;
         return false;
-      })
+      });
+
+      $(function() {
+        createChart();
+      });
     })
   </script>
 
 <% end %>
 
-<div id="chart"><%= link_to 'Ver gráfico', '#', :id => 'createChart' %></div>
+<div id="chart"><%= link_to 'Ocultar gráfico', '#', :id => 'toggleChart' %></div>
 
 <table>
   <thead>

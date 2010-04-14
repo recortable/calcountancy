@@ -48,9 +48,9 @@ namespace :deploy do
   end
 end
 
-namespace :backup do
+namespace :mysql do
   desc "Backup the remote production database"
-  task :mysql, :roles => :db, :only => { :primary => true } do
+  task :backup, :roles => :db, :only => { :primary => true } do
     filename = "#{application}.dump.#{Time.now.to_i}.sql.bz2"
     file = "/tmp/#{filename}"
     on_rollback { delete file }
@@ -64,6 +64,33 @@ namespace :backup do
     `rm #{File.dirname(__FILE__)}/../backups/#{filename}`
     # delete file
   end
+
+  desc "Copy the latest backup to the local development database"
+  task :import do
+    filename = `ls -tr backups | tail -n 1`.chomp
+    if filename.empty?
+      logger.important "No backups found"
+    else
+      logger.debug "Copy #{filename} to tmp"
+      `cp -f backups/#{filename} tmp`
+      `gpg tmp/#{filename}`
+      
+      filename = filename[0..-5]
+      ddb = YAML::load(ERB.new(IO.read(File.join(File.dirname(__FILE__), 'database.yml'))).result)['development']
+      logger.debug "Loading backups/#{filename} into local development database"
+
+      `bzip2 -cd tmp/#{filename}`
+      #| mysql -u #{ddb['username']} --password=#{ddb['password']} #{ddb['database']}`
+      logger.debug "command finished"
+    end
+  end
+
+  desc "Backup the remote production database and import it to the local development database"
+  task :backup_and_import do
+    backup
+    import_backup
+  end
+
 end
 
 desc "Backup the database before running migrations"

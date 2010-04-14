@@ -70,8 +70,10 @@ td {padding: 3px 3px;}
 td.number {text-align: right;}
 thead tr {font-weight: bold;}
 tbody tr {border-top: 1px solid @gris;}
-td.positive {color: @verde;}
-td.negative {color: @rojo;}
+td.positive, .ammount.positive {color: @verde;}
+td.negative, .ammount.negative {color: @rojo;}
+td.concept {font-family: @serif;}
+.ammount {white-space: nowrap;}
 
 div.properties {margin: 10px 0;}
 div.properties p {margin: 5px 0;}
@@ -91,7 +93,7 @@ a.icon_delete_small {width: 7px; height: 7px; background: url('/images/icons/x_7
 
 .tag_manager {margin-bottom: 20px;}
 .tags {width: 100%; overflow: hidden;}
-.tags .tag {.button;}
+.tags .tag {.button; margin-bottom: 10px; margin-right: 10px;}
 
 td .icon {float: left;}
 .tag .icon, .tagging .icon {float: right;margin: 3px 0 0 3px;}
@@ -103,5 +105,10 @@ td .icon {float: left;}
 
 #chart {padding: 10px 0px;}
 
-.action_manager {margin-bottom: 30px; }
+.action_manager {padding: 10px; margin: 20px 0; border: 1px solid @gris; .rounded;}
 tr.selected {background-color: yellow;}
+
+.period {margin: 0px 0 20px 0; font-size: 120%;}
+.period p {margin-bottom: 5px;}
+
+#calc_graph {margin-bottom: 10px; font-family: @sans; }
