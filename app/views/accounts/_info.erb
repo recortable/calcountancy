@@ -1,0 +1,3 @@
+<div class="account_info">
+  <%= link_to info.name, user_account_path(info) %>: <%= info.complete_number %> (<%= info.users.map{|u| u.name}.join(' ') %>)
+</div>

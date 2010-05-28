@@ -82,13 +82,13 @@ es:
     new:
       title: "Añadir tag a la cuenta '{{name}}'"
     show:
-      title: "Movimientos con etiqueta '{{tag}}' en la cuenta '{{account}}'"
+      title: "Movimientos con etiqueta '{{tag}}'"
     edit:
       title: "Editando etiqueta '{{tag}}'"
 
   user_account_month_summaries:
     show:
-      title: "Movimientos en la cuenta '{{account}}'"
+      title: "Movimientos en el mes de '{{month}}'"
       edit: "Modificar"
 
   bulk_actions:
@@ -97,11 +97,11 @@ es:
 
   year_summaries:
     show:
-      title: "Movimientos durante el {{year}} en la cuenta '{{account}}'"
+      title: "Movimientos durante el {{year}}"
 
   quarter_summaries:
     show:
-      title: "Movimientos durante el trimestre {{quarter}} del año {{year}} en la cuenta '{{account}}'"
+      title: "Movimientos durante el trimestre {{quarter}} del año {{year}}"
 
   months:
     month-1: Enero

@@ -183,6 +183,15 @@ div.actions a {
   color: gray;
   font-size: 80%;
 }
+.account_info {
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+.account_info a {
+  font-weight: normal;
+  font-size: 140%;
+  font-style: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+}
 textarea {
   font-size: 80%;
   padding: 2px;

@@ -1,12 +1,11 @@
 <% content_for :top do %>
-  <div class="actions">
-  </div>
-  <%= title t('.title',  :account => @account.name)  %>
-<h2>Desde el <%= @summary.begin_date.mday %> de <%= mes @summary.begin_date.month %> de <%= @summary.begin_date.year %>
-(<%= euros @summary.before_balance %>)</h2>
-<h2>Hasta el <%= @summary.end_date.mday %> de <%= mes @summary.end_date.month %> de <%= @summary.end_date.year %>
-(<%= euros @summary.after_balance %>)</h2>
-<h2>Balance: <%= euros @summary.balance %></h2>
+<%= render 'accounts/info', :object => @account %>
+  <%= title t('.title',  :month => mes(@summary.begin_date.month))  %>
+  <h2>Desde el <%= @summary.begin_date.mday %> de <%= mes @summary.begin_date.month %> de <%= @summary.begin_date.year %>
+    (<%= euros @summary.before_balance %>)</h2>
+  <h2>Hasta el <%= @summary.end_date.mday %> de <%= mes @summary.end_date.month %> de <%= @summary.end_date.year %>
+    (<%= euros @summary.after_balance %>)</h2>
+  <h2>Balance: <%= euros @summary.balance %></h2>
 <% end %>
 
 <%= render :partial => 'movements/movements', :object => @summary.movements %>

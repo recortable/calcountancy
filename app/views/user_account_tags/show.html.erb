@@ -1,5 +1,6 @@
 <% content_for :top do  %>
-  <%= title t('.title', :account => @tag.account.name, :tag => @tag.name) %>
+  <%= render 'accounts/info', :object => @tag.account %>
+  <%= title t('.title', :tag => @tag.name) %>
 <% end %>
 
 <div class="period">
@@ -7,6 +8,4 @@
   <p>Salidas: <%= euros_of @period.negative_ammount %> (<%= "#{@period.negative_percent}%" %> de la entrada)</p>
 </div>
 
-<table>
-  <%= render 'movements/movements', :object => @tag.movements %>
-</table>
+<%= render 'movements/movements', :object => @tag.movements %>

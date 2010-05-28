@@ -27,7 +27,7 @@
           <%= link_to image_tag('icons/comment_fill_12x11.png'), comentar_movement_path(movement), :id => "add_comment-#{movement.id}", :class => 'add_comment' %>
         </td>
         <td><%= movement.d.mday %>/<%= movement.d.month %>/<%= link_to movement.d.year, user_account_year_summary_path(@account, movement.d.year) %></td>
-        <td class="number"><%= euros_of movement.ammount, :class => 'value' %></td>
+        <td class="number"><%= euros_of movement.ammount, :class => "value #{(movement.ammount > 0 ? 'green' : 'red')}" %></td>
         <td class="number"><span class="ammount"><%= euros movement.balance %></span></td>
         <td class="concept"><%= movement.concept %></td>
         <td>

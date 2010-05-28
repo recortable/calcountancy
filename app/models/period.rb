@@ -46,6 +46,6 @@ class Period
   end
 
   def negative_percent
-    @negative_percent ||= positive_ammount > 0 ? (100 * negative_ammount / positive_ammount) : 'no hay'
+    @negative_percent ||= positive_ammount > 0 ? (100 * negative_ammount / positive_ammount) : 'no hay '
   end
 end
