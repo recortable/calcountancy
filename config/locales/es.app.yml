@@ -99,6 +99,10 @@ es:
     show:
       title: "Movimientos durante el {{year}} en la cuenta '{{account}}'"
 
+  quarter_summaries:
+    show:
+      title: "Movimientos durante el trimestre {{quarter}} del año {{year}} en la cuenta '{{account}}'"
+
   months:
     month-1: Enero
     month-2: Febrero

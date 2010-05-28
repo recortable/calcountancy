@@ -96,7 +96,7 @@ h1, h2, h3, h4 { font-family: Georgia, Cambria, Times, serif; }
 #legal {
   clear: both;
   margin-top: 3px;
-  height: 7em;
+  height: 10em;
   font-size: 80%;
   letter-spacing: 0.2em;
   text-align: center;
@@ -141,11 +141,11 @@ h1, h2, h3, h4 { font-family: Georgia, Cambria, Times, serif; }
   margin-left: 160px;
   padding-bottom: 20px;
 }
-#top h1 {
+h1 {
   font-size: 200%;
   margin-bottom: 10px;
 }
-#top h2 {
+h2 {
   font-size: 130%;
   margin-bottom: 5px;
 }
@@ -322,13 +322,15 @@ td .icon { float: left; }
 }
 .taggings.active { border: 1px solid black; }
 .taggings.drophover { border: 1px solid #990000; }
-#chart { padding: 10px 0px; }
-.no_action_manager {
-  padding: 10px;
-  margin: 20px 0;
-  border: 1px solid #e1e4e4;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+#chart {
+  padding: 10px 0px;
+  margin-bottom: 10px;
+}
+#chart a {
+  display: block;
+  font-size: 90%;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  color: gray;
 }
 .action_manager {
   position: fixed;
@@ -342,6 +344,10 @@ td .icon { float: left; }
   width: 960px;
   margin: 0 auto;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
 }
 tr.selected { background-color: yellow; }
 .period {
@@ -353,3 +359,13 @@ tr.selected { background-color: yellow; }
   margin-bottom: 10px;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
 }
+div.reports {
+  margin: 10px 0;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font-size: 75%;
+}
+div.reports a { font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif; }
+div.reports a.year_summary { font-size: 130%; }

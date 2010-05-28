@@ -10,6 +10,10 @@ class Account < ActiveRecord::Base
     "#{entity_code} #{office_code} #{control_code} #{number}"
   end
 
+  def years
+    (self.movements.last.d.year..Date.today.year).to_a
+  end
+
   def account_number
     "#{entity_code}#{office_code}#{number}"
   end

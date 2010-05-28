@@ -21,7 +21,7 @@ a:hover {text-decoration: underline;}
 h1, h2, h3, h4 {font-family: @serif;}
 
 #user {text-align: right; width: @page_width; margin: 30px auto 3px auto; }
-#legal {clear: both; margin-top: 3px; height: 7em; font-size: 80%; letter-spacing: 0.2em; text-align: center; font-family: @sans; color: @grisoscuro;}
+#legal {clear: both; margin-top: 3px; height: 10em; font-size: 80%; letter-spacing: 0.2em; text-align: center; font-family: @sans; color: @grisoscuro;}
 #legal a {letter-spacing: 0.5em; color: @grisoscuro;}
 #page {
     padding: 20px;
@@ -41,8 +41,8 @@ h1, h2, h3, h4 {font-family: @serif;}
 
 #content {margin-left: @site_width + 20;}
 #top {font-family: @serif; margin-left: @site_width + 20; padding-bottom: 20px;}
-#top h1 {font-size: 200%; margin-bottom: 10px;}
-#top h2 {font-size: 130%;margin-bottom: 5px;}
+h1 {font-size: 200%; margin-bottom: 10px;}
+h2 {font-size: 130%;margin-bottom: 5px;}
 
 div.actions {margin-bottom: 5px;font-family: @sans; font-size: @font-small;}
 div.actions a {color: @grisoscuro; margin-right: 1em;}
@@ -107,14 +107,26 @@ td .icon {float: left;}
 .taggings.active {border: 1px solid black;}
 .taggings.drophover {border: 1px solid @rojo;}
 
-#chart {padding: 10px 0px;}
+#chart {padding: 10px 0px; margin-bottom: 10px;}
+#chart a {display: block; font-size: 90%; font-family: @sans; color: @grisoscuro;}
 
-.no_action_manager {padding: 10px; margin: 20px 0; border: 1px solid @gris; .rounded;}
 .action_manager {position: fixed; left: 0; right: 0; bottom: 0; background-color: black; opacity: 0.8;
-    padding: 10px; color: white; width: 960px; margin: 0 auto; font-family: @sans;}
+    padding: 10px; color: white; width: 960px; margin: 0 auto; font-family: @sans;
+    -moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px;
+    -webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px;
+}
 tr.selected {background-color: yellow;}
 
 .period {margin: 0px 0 20px 0; font-size: 120%;}
 .period p {margin-bottom: 5px;}
 
 #calc_graph {margin-bottom: 10px; font-family: @sans; }
+
+div.reports {
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: @grisclaro; .rounded;
+    font-size: 75%;
+}
+div.reports a {font-family: @sans; }
+div.reports a.year_summary {font-size: 130%;}

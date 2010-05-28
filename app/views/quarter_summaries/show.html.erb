@@ -1,5 +1,5 @@
 <% content_for :top do %>
-  <%= title t('.title',  :year => @year, :account => @account.name)  %>
+  <%= title t('.title',  :year => @year, :account => @account.name, :quarter => @quarter)  %>
   <% if @period %>
     <h2>Desde el <%= @period.begin_date.mday %> de <%= mes @period.begin_date.month %> del <%= @period.begin_date.year %>
       (<%= euros_of @period.before_balance %>)</h2>
@@ -12,5 +12,5 @@
 <% if @period %>
   <%= render :partial => 'movements/movements', :object => @period.movements %>
 <% else %>
-  No hay movimientos en las fechas especificadas
+    No hay movimientos en las fechas especificadas
 <% end %>

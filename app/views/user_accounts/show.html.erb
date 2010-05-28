@@ -3,11 +3,16 @@
     <%= link_to t('.edit'), edit_user_account_path(@account) %>
     <%= link_to t('.import'), new_user_account_import_path(@account) %>
   </div>
+  <%= @account.complete_number %> (<%= @account.users.map{|u| u.name}.join(' ') %>)
   <%= title t('.title', :name => @account.name)  %>
-<%= @account.complete_number %> (<%= @account.users.map{|u| u.name}.join(' ') %>)
+  <div class="reports">
+    <h2>Informes</h2>
+    <% @account.years.each do |year| %>
+      <%= link_to year, user_account_year_summary_path(@account, year), :class => 'year_summary' %>
+      <% 1.upto(4) do |quarter| -%><%= link_to "Q#{quarter}", user_account_quarter_summary_path(@account, "#{year}-Q#{quarter}") %> <% end -%>&nbsp;&nbsp;
+    <% end  %>
+  </div>
 <% end %>
-
-
 
 <%= render '/month_summaries/summaries', :object => @account.month_summaries %>
 

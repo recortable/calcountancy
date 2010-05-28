@@ -37,17 +37,17 @@
         src += "&chxr=1," + min + "," + max;
         //$("#chartdata").html(src);
         var image = $("<img />").attr('id', 'generated_chart').attr('src', src);
-        $("#chart").append(image);
+        $("#chart").prepend(image);
         visible = true;
       }
 
       $("#toggleChart").click(function() {
         if (visible) {
           $("#generated_chart").hide();
-          $("#toggleChart").html("Mostrar gráfico");
+          $("#toggleChart").html("Mostrar gráfica");
         } else {
           $("#generated_chart").show();
-          $("#toggleChart").html("Ocultar gráfico");
+          $("#toggleChart").html("Ocultar gráfica");
         }
         visible = !visible;
         return false;
@@ -61,7 +61,9 @@
 
 <% end %>
 
-<div id="chart"><%= link_to 'Ocultar gráfico', '#', :id => 'toggleChart' %></div>
+
+<h2>Resúmen por meses</h2>
+<div id="chart"><%= link_to 'Ocultar gráfica', '#', :id => 'toggleChart' %></div>
 
 <table>
   <thead>

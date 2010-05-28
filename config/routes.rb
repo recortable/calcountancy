@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
       account.resources(:tags, :controller => 'user_account_tags', :as => 'tags')
       account.resources(:month_summaries, :controller => 'user_account_month_summaries', :as => 'ver')
       account.resources(:year_summaries, :controller => 'year_summaries', :as => 'anyo')
+      account.resources(:quarter_summaries, :controller => 'quarter_summaries', :as => 'q')
     end
   end
 
