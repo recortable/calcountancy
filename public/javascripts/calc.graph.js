@@ -9,25 +9,28 @@
         var labels = "";
         var colors = "";
         $(settings.table_selector + " tr").each(function() {
-            if (data.length != 0) {
-                data += ",";
-                labels += "|";
-                colors += "|";
-            }
-            var value = $(this).find(settings.value_selector).html();
-            value = value.replace(' €', '');
-            value = value.replace('.', '');
-            value = value.replace(',', '.');
-            var fvalue = parseFloat(value);
-            max = Math.max(max, fvalue);
-            min = Math.min(min, fvalue);
-            data += value;
-            if (settings.use_colors) {
-                colors += fvalue < 0 ? 'cc0000' : '00cc00';
-            }
-            if (settings.use_labels) {
-                var label = $(this).find(settings.label_selector).html();
-                labels += label;
+            var row = $(this);
+            if (!row.hasClass('nodata')) {
+                if (data.length != 0) {
+                    data += ",";
+                    labels += "|";
+                    colors += "|";
+                }
+                var value = row.find(settings.value_selector).html();
+                value = value.replace(' \u20ac', '');
+                value = value.replace('.', '');
+                value = value.replace(',', '.');
+                var fvalue = parseFloat(value);
+                max = Math.max(max, fvalue);
+                min = Math.min(min, fvalue);
+                data += value;
+                if (settings.use_colors) {
+                    colors += fvalue < 0 ? 'cc0000' : '00cc00';
+                }
+                if (settings.use_labels) {
+                    var label = row.find(settings.label_selector).html();
+                    labels += label;
+                }
             }
         });
         src += "&cht=" + settings.chart_type;

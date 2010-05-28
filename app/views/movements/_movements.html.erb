@@ -24,6 +24,7 @@
         <td>
           <span class="label" style="display: none"></span>
           <%= check_box_tag "movement-#{movement.id}", movement.id, false, :class => 'selector' %>
+          <%= link_to image_tag('icons/comment_fill_12x11.png'), comentar_movement_path(movement), :id => "add_comment-#{movement.id}", :class => 'add_comment' %>
         </td>
         <td><%= movement.d.mday %>/<%= movement.d.month %>/<%= link_to movement.d.year, user_account_year_summary_path(@account, movement.d.year) %></td>
         <td class="number"><%= euros_of movement.ammount, :class => 'value' %></td>
@@ -33,8 +34,16 @@
           <div id="tagging_movement_<%= movement.id %>" class="tags taggings"><%= render movement.taggings %></div>
         </td>
         <td>
-  <%#= icon_link_to 'comment', t('.add_comment'), edit_movement_path(movement, :display => 'comments') %>
-  <%#= icon_link_to 'tag', t('.manage_tags'), edit_movement_path(movement, :display => 'tags') %>
+        </td>
+      </tr>
+      <tr class="comments nodata">
+        <td></td>
+        <td colspan="6" class="comments" id="comments-<%= movement.id %>">
+          <% if movement.comments?  %>
+            <% movement.comments.each do |comment| %>
+              <%= comment %><br/>
+            <% end %>
+          <% end %>
         </td>
       </tr>
     <% end %>

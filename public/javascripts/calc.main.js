@@ -88,4 +88,23 @@
         $.calc.flash("Enviando, espera un momento...");
     })
 
+    // Add and remove comments
+    $(function() {
+        $("a.add_comment").each(function() {
+            $(this).click(function(event) {
+                event.preventDefault();
+                var id = $(this).attr('id').split('-')[1];
+                var comment = prompt("Comenta este movimiento: ").trim();
+                if (comment != null && comment != '') {
+                    $.post($(this).attr('href'), {
+                        'comment' : comment
+                    }, function(data) {
+                        eval(data);
+                    }, 'js');
+                }
+                return false;
+            });
+        });
+    });
+
 })(jQuery);

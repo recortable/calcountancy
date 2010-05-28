@@ -15,6 +15,6 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
 
-  map.resources(:movements, :as => 'movimientos')
+  map.resources(:movements, :as => 'movimientos', :member => {:comentar => :post})
   map.resources(:taggings, :as => 'taggings')
 end

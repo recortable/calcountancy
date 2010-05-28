@@ -31,4 +31,9 @@ class Movement < ActiveRecord::Base
   def generate_code
     self.code = "#{self.date}#{self.ammount}#{self.balance}"
   end
+
+  def comments?
+    !self.comments.blank?
+  end
+
 end

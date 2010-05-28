@@ -231,6 +231,11 @@ td { padding: 3px 3px; }
 td.number { text-align: right; }
 thead tr { font-weight: bold; }
 tbody tr { border-top: 1px solid #e1e4e4; }
+tbody tr.comments {
+  border-top: 1px solid white;
+  font-size: 90%;
+  color: gray;
+}
 td.positive, .ammount.positive { color: #008800; }
 td.negative, .ammount.negative { color: #990000; }
 td.concept { font-family: Georgia, Cambria, Times, serif; }
