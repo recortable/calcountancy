@@ -1,6 +1,7 @@
 
 class Import
-  attr_reader :account_number, :account_name, :initial_balance, :movements, :end_balance, :errors, :records_to_import
+  attr_reader :account_number, :account_name, :initial_balance, :movements, :end_balance
+  attr_reader :errors, :records_to_import, :records_duplicated
   def initialize(account, text)
     @account = account
     @text = text
@@ -8,6 +9,7 @@ class Import
     @errors = []
     @current = nil
     @records_to_import = 0
+    @records_duplicated = 0
     parse
     validate
   end
@@ -97,6 +99,7 @@ class Import
       state = by_code[code].nil? ? 'import' : 'duplicate'
       movement.import = state
       @records_to_import += 1 if state == 'import'
+      @records_duplicated += 1 if state == 'duplicate'
     end
   end
 

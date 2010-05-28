@@ -66,7 +66,7 @@
 <table>
   <thead>
     <tr>
-      <td>Mes</td>
+      <td>Fecha</td>
       <td class="number">Entradas</td><td class="number">Salidas</td>
       <td class="number">Saldo</td>
       <td class="number">Balance</td>
@@ -76,7 +76,7 @@
     <% summaries.each do |summary| %>
       <tr>
         <td class="label" style="display: none;"><%= summary.month %></td>
-        <td ><a href="<%= user_account_month_summary_path(summary.account, summary) %>"><%= summary.year %> <%= mes(summary.month) %></a></td>
+        <td ><a href="<%= user_account_month_summary_path(summary.account, summary) %>"><%= "#{summary.month}/#{summary.year}" %> <%= mes(summary.month) %></a></td>
         <td class="number positive"><%= euros summary.positive_ammount %></td>
         <td class="number negative"><%= euros summary.negative_ammount %></td>
         <td class="number"><%= euros summary.after_balance %></td>

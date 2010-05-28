@@ -1,3 +1,5 @@
+
+# Resúmenes mensuales
 class MonthSummary < ActiveRecord::Base
   belongs_to :account
   before_save :calculate

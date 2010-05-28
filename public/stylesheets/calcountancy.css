@@ -76,6 +76,8 @@ html {
   font-family: Georgia, Cambria, Times, serif;
   background-color: #f0f0f0;
 }
+.red { color: #990000; }
+.green { color: #008800; }
 html, body {
   height: 100%;
   width: 100%;

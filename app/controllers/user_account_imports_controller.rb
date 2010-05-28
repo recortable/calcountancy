@@ -16,6 +16,7 @@ class UserAccountImportsController < ApplicationController
           movement.save!
           @movements << movement
         end
+        SummaryBuilder.new(@account)
       end
       #flash[:notice] = t('user_account_imports.create.success')
     rescue ActiveRecord::RecordInvalid => e

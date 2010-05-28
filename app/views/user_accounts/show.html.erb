@@ -4,6 +4,7 @@
     <%= link_to t('.import'), new_user_account_import_path(@account) %>
   </div>
   <%= title t('.title', :name => @account.name)  %>
+<%= @account.complete_number %> (<%= @account.users.map{|u| u.name}.join(' ') %>)
 <% end %>
 
 

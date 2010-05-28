@@ -5,6 +5,7 @@
 
 <div class="properties">
   <p><label><%= t('app.account_number') %>:</label><%= @account.account_number %></p>
+  <p><label>Último movimiento:</label><%= @account.movements.first.d.fecha %></p>
 </div>
 
 <% form_tag(preview_user_account_import_path(@account), :class => 'import') do %>
@@ -21,6 +22,7 @@
     <p><label><%=  t('app.initial_balance') %>:</label><%= @import.initial_balance %></p>
     <p><label><%=  t('app.end_balance') %>:</label><%= @import.end_balance %></p>
     <p class="records_to_import"><label><%=  t('import.records_to_import') %>:</label><%= @import.records_to_import %></p>
+    <p class="red"><label>Número de elementos duplicados:</label><%= @import.records_duplicated %></p>
   </div>
 
   <% if @import.errors? %>
@@ -39,7 +41,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @import.movements.each_with_index do |movement, index| %>
+          <% @import.movements.reverse.each_with_index do |movement, index| %>
             <tr>
               <td class="import_state <%= movement.import %>">
                 <%= t("import.state.#{movement.import}") %>
