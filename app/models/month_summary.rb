@@ -38,7 +38,7 @@ class MonthSummary < ActiveRecord::Base
     self.negative_ammount = 0
     all = self.movements
     if all.count > 0
-      self.before_balance = all.last.before_balance
+      self.before_balance = all.last.balance
       self.after_balance = all.first.balance
       all.each do |movement|
         if movement.ammount >= 0
