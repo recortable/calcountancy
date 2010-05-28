@@ -54,7 +54,12 @@
                 ids.push($(this).attr('value'));
             });
             $("#bulk_action_movement_ids").attr('value', ids.join(','));
-            $(this).ajaxSubmit();
+            am.fadeOut();
+            $(this).ajaxSubmit({
+                success:    function() {
+                    am.fadeIn();
+                }
+            });
             return false;
         });
         $(".action_manager .select_none").click(function() {
