@@ -20,7 +20,7 @@
   </thead>
   <tbody id="calc_data">
     <% movements.each do |movement| %>
-      <tr>
+      <tr class="movement">
         <td>
           <span class="label" style="display: none"></span>
           <%= check_box_tag "movement-#{movement.id}", movement.id, false, :class => 'selector' %>

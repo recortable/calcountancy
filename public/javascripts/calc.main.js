@@ -64,7 +64,7 @@
         })
         $(".action_manager .select_all").click(function() {
             $("input.selector").attr('checked', true);
-            $("tbody tr").addClass('selected');
+            $("tbody tr.movement").addClass('selected');
             return false;
         })
 
